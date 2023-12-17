@@ -1,15 +1,14 @@
-const swiper = new Swiper('.swiper', {
-  //オプションの設定
-  loop: true, //最後までスライドしたら最初の画像に戻る
+$(function() {
+  // #back内のaタグがクリックされたときの処理
+  $('#back a').on('click',function(event){
+    // アニメーション効果を設定するjQueryの関数
 
-  //ページネーション表示の設定
-  pagination: {
-    el: '.swiper-pagination', //ページネーションの要素
-  },
-
-  //ナビゲーションボタン（矢印）表示の設定
-  navigation: {
-    nextEl: '.swiper-button-next', //「次へボタン」要素の指定
-    prevEl: '.swiper-button-prev', //「前へボタン」要素の指定
-  }
+ // $('セレクタ名').animate({
+ // 変化対象のプロパティ名:変化値
+ // }, アニメーションの動作時間);
+    $('body, html').animate({
+      scrollTop:0
+    }, 800);
+    event.preventDefault();
+  });
 });
